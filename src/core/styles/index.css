@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/museo-sans-rounded');
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-variable-static-display');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    --custom-orange: 11 98% 63%;
+
+    /* Purple */
+    --pet-purple-1000: 246 71% 40%; /* 0.16 */
+    --pet-purple-900: 246 73% 47%; /* 0.5 */
+    --pet-purple-800: 246 100% 81%;
+
+    /* Blue */
+    --pet-blue-1000: 219 100% 63%;
+    /* --pet-blue-1000: 219 100% 63%;       0.34 */
+    --pet-blue-900: 217 50% 97%;
+
+    /* Orange */
+    --pet-orange-1000: 22 82% 46%;
+    --pet-orange-900: 11 99% 63%;
+    --pet-orange-800: 11 98% 63%;
+    /* --pet-orange-800: 11 98% 63%;        0.3 */
+    --pet-orange-700: 7 100% 66%;
+
+    /* Yellow */
+    --pet-yellow-1000: 38 99% 61%;
+    --pet-yellow-900: 42 100% 67%;
+    --pet-yellow-800: 52 100% 59%;
+
+    /* Grey */
+    --pet-grey-1000: 0 0% 0%; /* 0.16 */
+    --pet-grey-900: 0 0% 44%;
+    --pet-grey-800: 0 0% 50%;
+
+    /* White */
+    --pet-white-1000: 0 0% 97%;
+    --pet-white-900: 0 0% 100%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    --custom-orange: 11 98% 63%;
+
+    /* Purple */
+    --pet-purple-1000: 246 71% 40%; /* 0.16 */
+    --pet-purple-900: 246 73% 47%; /* 0.5 */
+    --pet-purple-800: 246 100% 81%;
+
+    /* Blue */
+    --pet-blue-1000: 219 100% 63%;
+    /* --pet-blue-1000: 219 100% 63%;       0.34 */
+    --pet-blue-900: 217 50% 97%;
+
+    /* Orange */
+    --pet-orange-1000: 22 82% 46%;
+    --pet-orange-900: 11 99% 63%;
+    --pet-orange-800: 11 98% 63%;
+    /* --pet-orange-800: 11 98% 63%;        0.3 */
+    --pet-orange-700: 7 100% 66%;
+
+    /* Yellow */
+    --pet-yellow-1000: 38 99% 61%;
+    --pet-yellow-900: 42 100% 67%;
+    --pet-yellow-800: 52 100% 59%;
+
+    /* Grey */
+    --pet-grey-1000: 0 0% 0%; /* 0.16 */
+    --pet-grey-900: 0 0% 44%;
+    --pet-grey-800: 0 0% 50%;
+
+    /* White */
+    --pet-white-1000: 0 0% 97%;
+    --pet-white-900: 0 0% 100%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.perro-container {
+  clip-path: url(#mask);
+}
+
+.perro {
+  transform: translateX(100px) translateY(30px);
+}
+
+.circle {
+  clip-path: circle(50% at 50% 50%);
+  background: hsl(var(--pet-yellow-800));
+}
+
+.perro-container-2 {
+  clip-path: url(#mask-2);
+  /* background: red; */
+  /* margin-left: 20px; */
+}
+
+.perro-2 {
+  transform: translateX(50px) translateY(20px);
+}
+
+.circle-2 {
+  clip-path: circle(50% at 50% 50%);
+  width: 334px;
+  height: 334px;
+  background: hsl(var(--pet-yellow-800));
+}
+
+.bienvenido::before {
+  content: '';
+  position: absolute;
+  left: -45px;
+  top: -5px;
+  height: calc(100% + 10px);
+  width: 9px;
+  background: hsl(var(--pet-orange-700));
+}
+
+/* Carousel */
+.container-2 input[type='radio'] {
+  display: none;
+}
+
+.card {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.card-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-effect::after {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg width="703" height="418" viewBox="0 0 703 418" fill="none" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode:multiply" opacity="0.1"><mask id="mask0_82_75" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="3" y="0" width="697" height="412"><path d="M3.64062 20.8721C3.64062 9.82639 12.5949 0.87207 23.6406 0.87207H679.641C690.686 0.87207 699.641 9.82638 699.641 20.8721V391.872C699.641 402.918 690.686 411.872 679.641 411.872H23.6406C12.5949 411.872 3.64062 402.918 3.64062 391.872V20.8721Z" fill="url(%23paint0_linear_82_75)"/></mask><g mask="url(%23mask0_82_75)"><path d="M111.374 -28.0615C111.374 -28.0615 -19.8262 114.872 288.44 204.472C596.707 294.072 712.975 239.672 782.308 444.472C851.641 649.271 -60.3594 482.872 -60.3594 482.872L-107.293 6.07178L111.374 -28.0615Z" fill="%2340067E"/></g></g><defs><linearGradient id="paint0_linear_82_75" x1="535.907" y1="23.1387" x2="535.907" y2="453.006" gradientUnits="userSpaceOnUse"><stop offset="1" stop-color="%237569DE"/><stop stop-color="%23E3A5FF"/></linearGradient></defs></svg>')
+    no-repeat;
+  overflow: hidden;
+  mix-blend-mode: multiply;
+}
+
+.container-2 {
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+#item-1:checked ~ .cards #card-3,
+#item-2:checked ~ .cards #card-1,
+#item-3:checked ~ .cards #card-2 {
+  transform: translatex(-60%) scale(0.75);
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #card-2,
+#item-2:checked ~ .cards #card-3,
+#item-3:checked ~ .cards #card-1 {
+  transform: translatex(60%) scale(0.75);
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #card-1,
+#item-2:checked ~ .cards #card-2,
+#item-3:checked ~ .cards #card-3 {
+  transform: translatex(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
